@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rv_jogos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/ll_tc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/iv_tc_bandeira_pais"
+        android:layout_toStartOf="@+id/iv_tc_bandeira_pais"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_tc_escudo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_tc_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:textColor="@color/colorItemTexto"
+            android:textSize="16sp" />
+
+        <include layout="@layout/estrelas" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_tc_bandeira_pais"
+        android:layout_width="17dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@+id/tv_vs"
+        android:layout_marginTop="6dp"
+        android:layout_toLeftOf="@+id/tv_vs"
+        android:layout_toStartOf="@+id/tv_vs"
+        android:background="@drawable/bandeira_borda"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorItemTextoPequeno"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tv_horario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_data"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorItemTextoPequeno"
+        android:textSize="10sp" />
+
+
+    <TextView
+        android:id="@+id/tv_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_horario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:text="- VS -"
+        android:textColor="@color/colorItemTexto"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_estadio"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_vs"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/colorItemTextoPequeno"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/iv_tv_bandeira_pais"
+        android:layout_width="17dp"
+        android:layout_height="12dp"
+        android:layout_alignTop="@+id/tv_vs"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/tv_vs"
+        android:layout_toRightOf="@+id/tv_vs"
+        android:background="@drawable/bandeira_borda"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:id="@+id/ll_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/iv_tv_bandeira_pais"
+        android:layout_toRightOf="@+id/iv_tv_bandeira_pais"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_tv_escudo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/tv_tv_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:textColor="@color/colorItemTexto"
+            android:textSize="16sp" />
+
+        <include layout="@layout/estrelas" />
+    </LinearLayout>
+
+</RelativeLayout>
