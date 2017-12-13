@@ -6,5 +6,4 @@ class Jogo(
     val timeVisitante: Time,
     val estadio: String,
     val data: String,
-    val horario: String) {
-}
+    val horario: String)

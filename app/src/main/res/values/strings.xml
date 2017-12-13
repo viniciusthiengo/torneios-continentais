@@ -5,6 +5,8 @@
     <string name="navigation_drawer_close">Fechar navigation drawer</string>
     <string name="title_activity_detalhes_time">DetalhesTimeActivity</string>
 
+    <string name="historia">História</string>
+    <string name="torcida">Torcida</string>
     <string name="descricao">
         Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e
         vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de
@@ -31,6 +33,4 @@
         reproduzidas abaixo em sua forma exata original, acompanhada das versões para o inglês da tradução
         feita por H. Rackham em 1914.
     </string>
-    <string name="historia">História</string>
-    <string name="torcida">Torcida</string>
 </resources>

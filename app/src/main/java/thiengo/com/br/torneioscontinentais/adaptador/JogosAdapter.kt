@@ -1,9 +1,8 @@
-package thiengo.com.br.torneioscontinentais.adapter
+package thiengo.com.br.torneioscontinentais.adaptador
 
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,41 +17,45 @@ import thiengo.com.br.torneioscontinentais.dominio.Time
 
 
 class JogosAdapter(
-        private val context: Context,
-        private val pokemons: List<Jogo>) :
+    private val context: Context,
+    private val jogos: List<Jogo>) :
         RecyclerView.Adapter<JogosAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int) : JogosAdapter.ViewHolder {
+        parent: ViewGroup,
+        viewType: Int) : JogosAdapter.ViewHolder {
 
         val v = LayoutInflater
-                .from(context)
-                .inflate(R.layout.jogo, parent, false)
+            .from(context)
+            .inflate(R.layout.jogo, parent, false)
 
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.setData(pokemons[position])
+        holder.setDados(jogos[position])
     }
 
     override fun getItemCount(): Int {
-        return pokemons.size
+        return jogos.size
     }
 
     inner class ViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView),
             View.OnClickListener {
 
+        /* Time casa */
         var llTc: LinearLayout
         var ivTcBandeiraPais: ImageView
         var ivTcEscudo: ImageView
         var tvTcNome: TextView
+
+        /* Time visitante */
         var llTv: LinearLayout
         var ivTvBandeiraPais: ImageView
         var ivTvEscudo: ImageView
         var tvTvNome: TextView
+
         var tvData: TextView
         var tvHorario: TextView
         var tvEstadio: TextView
@@ -75,25 +78,33 @@ class JogosAdapter(
             tvEstadio = itemView.findViewById(R.id.tv_estadio)
         }
 
-        fun setData(jogo: Jogo) {
+        fun setDados(jogo: Jogo) {
             ivTcBandeiraPais.setImageResource( jogo.timeCasa.idBandeiraPais )
             ivTcEscudo.setImageResource( jogo.timeCasa.idEscudo )
             tvTcNome.text = jogo.timeCasa.nome
-            llTc.tag = jogo.timeCasa
-            estrelasCampeonatos(llTc, jogo.timeCasa.qtdCampeonatos)
+            llTc.tag = jogo.timeCasa /* Hackcode para recuperar o objeto correto no listener de clique. */
+            estrelasCampeonatosGanhos(llTc, jogo.timeCasa.qtdCampeonatos)
 
             ivTvBandeiraPais.setImageResource( jogo.timeVisitante.idBandeiraPais )
             ivTvEscudo.setImageResource( jogo.timeVisitante.idEscudo )
             tvTvNome.text = jogo.timeVisitante.nome
-            llTv.tag = jogo.timeVisitante
-            estrelasCampeonatos(llTv, jogo.timeVisitante.qtdCampeonatos)
+            llTv.tag = jogo.timeVisitante /* Hackcode para recuperar o objeto correto no listener de clique. */
+            estrelasCampeonatosGanhos(llTv, jogo.timeVisitante.qtdCampeonatos)
 
             tvData.text = jogo.data
             tvHorario.text = jogo.horario
             tvEstadio.text = jogo.estadio
         }
 
-        private fun estrelasCampeonatos(ll: LinearLayout, qtdCampeonatos: Int){
+        /*
+         * O número de ImageViews, com o ícone de estrela, presentes no
+         * layout estrelas.xml é o mesmo número do time que mais ganhou
+         * títulos continentais, 12. Assim o algoritmo abaixo somente
+         * tem de trabalhar o apresentar / esconder dos ImageViews. Essa
+         * é uma abordagem mais eficiente do que ter de criar e destruir
+         * ImageViews em tempo de execução.
+         * */
+        private fun estrelasCampeonatosGanhos(ll: LinearLayout, qtdCampeonatos: Int){
 
             for ( i in 0..ll.childCount ) {
 
@@ -110,6 +121,10 @@ class JogosAdapter(
             }
         }
 
+        /* O parâmetro view é na verdade o componente LinearLayout que
+         * recebeu o listener de clique em init{}. Na propriedade tag
+         * há o objeto time correto.
+         * */
         override fun onClick(view: View?) {
             val intent = Intent(context, DetalhesTimeActivity::class.java)
             intent.putExtra(Time.KEY, view!!.tag as Time)
