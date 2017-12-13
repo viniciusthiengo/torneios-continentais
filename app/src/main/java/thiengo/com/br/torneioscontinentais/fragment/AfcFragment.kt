@@ -9,7 +9,6 @@ class AfcFragment : FragmentAbstract() {
 
     companion object {
         @JvmField val TITULO = "Liga dos Campeões da AFC"
-        @JvmField val POS = 2
     }
 
     override fun onStart() {

@@ -25,12 +25,17 @@
             app:toolbarId="@+id/toolbar">
 
             <ImageView
-                android:id="@+id/iv_torcida_time"
+                android:id="@+id/iv_time"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/torcida"
                 android:contentDescription="@string/torcida"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
+                android:paddingBottom="60dp"
+                android:paddingLeft="170dp"
+                android:paddingStart="170dp"
+                android:paddingTop="35dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/torcida"
                 app:layout_collapseMode="parallax" />
 

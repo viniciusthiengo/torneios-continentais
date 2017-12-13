@@ -27,13 +27,17 @@ class DetalhesTimeActivity : AppCompatActivity() {
 
     /*
      * Hack code para que a atualização de título da atividade
-     * seja realizada.
+     * seja realizada. Logo foi escolhido para ficar também
+     * neste trecho de código a atualização do source do
+     * ImageView de topo de tela.
      * */
     override fun onResume() {
         super.onResume()
 
         val time = intent.getParcelableExtra<Time>(Time.KEY)
+
         toolbar.title = time!!.nome
+        iv_time.setImageResource( time.idEscudo )
     }
 
     /*

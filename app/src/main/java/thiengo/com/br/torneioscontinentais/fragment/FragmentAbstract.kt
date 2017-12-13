@@ -20,7 +20,8 @@ abstract class FragmentAbstract : Fragment() {
     var rvState: Parcelable? = null
 
     companion object {
-        @JvmField val TOTAL_SUBCLASSES = 3
+        @JvmField val KEY = "fragment"
+        @JvmField val TITULO = "titulo"
     }
 
     override fun onCreateView(

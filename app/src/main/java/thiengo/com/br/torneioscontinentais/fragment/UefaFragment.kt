@@ -9,7 +9,6 @@ class UefaFragment : FragmentAbstract() {
 
     companion object {
         @JvmField val TITULO = "UEFA Champions League"
-        @JvmField val POS = 0
     }
 
     override fun onStart() {

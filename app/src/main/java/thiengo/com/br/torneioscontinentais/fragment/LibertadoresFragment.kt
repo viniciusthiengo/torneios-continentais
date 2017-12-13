@@ -9,7 +9,6 @@ class LibertadoresFragment : FragmentAbstract() {
 
     companion object {
         @JvmField val TITULO = "Taça Libertadores"
-        @JvmField val POS = 1
     }
 
     override fun onStart() {
