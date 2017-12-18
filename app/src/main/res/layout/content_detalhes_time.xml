@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="56dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="thiengo.com.br.torneioscontinentais.atividade.DetalhesTimeActivity"
     tools:showIn="@layout/activity_detalhes_time">
 
     <LinearLayout
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/descricao"/>
+            android:text="@string/descricao" />
 
     </LinearLayout>
 

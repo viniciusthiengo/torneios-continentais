@@ -5,7 +5,7 @@ import thiengo.com.br.torneioscontinentais.adaptador.JogosAdapter
 import thiengo.com.br.torneioscontinentais.dados.BancoDados
 
 
-class LibertadoresFragment : FragmentAbstract() {
+class LibertadoresFragment : FragmentAbstrato() {
 
     companion object {
         @JvmField val TITULO = "Taça Libertadores"

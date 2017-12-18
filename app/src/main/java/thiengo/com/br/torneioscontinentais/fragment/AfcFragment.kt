@@ -5,7 +5,7 @@ import thiengo.com.br.torneioscontinentais.adaptador.JogosAdapter
 import thiengo.com.br.torneioscontinentais.dados.BancoDados
 
 
-class AfcFragment : FragmentAbstract() {
+class AfcFragment : FragmentAbstrato() {
 
     companion object {
         @JvmField val TITULO = "Liga dos Campeões da AFC"

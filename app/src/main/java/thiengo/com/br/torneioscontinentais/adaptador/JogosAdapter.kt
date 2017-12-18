@@ -1,7 +1,7 @@
 package thiengo.com.br.torneioscontinentais.adaptador
 
 import android.content.Context
-import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,23 +11,25 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.android.flexbox.FlexboxLayout
 import thiengo.com.br.torneioscontinentais.R
-import thiengo.com.br.torneioscontinentais.atividade.DetalhesTimeActivity
+import thiengo.com.br.torneioscontinentais.atividade.MainActivity
 import thiengo.com.br.torneioscontinentais.dominio.Jogo
 import thiengo.com.br.torneioscontinentais.dominio.Time
+import thiengo.com.br.torneioscontinentais.fragment.DetalhesTimeFragment
+import thiengo.com.br.torneioscontinentais.fragment.FragmentAbstrato
 
 
 class JogosAdapter(
-    private val context: Context,
-    private val jogos: List<Jogo>) :
+        private val context: Context,
+        private val jogos: List<Jogo>) :
         RecyclerView.Adapter<JogosAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int) : JogosAdapter.ViewHolder {
+            parent: ViewGroup,
+            viewType: Int) : JogosAdapter.ViewHolder {
 
         val v = LayoutInflater
-            .from(context)
-            .inflate(R.layout.jogo, parent, false)
+                .from(context)
+                .inflate(R.layout.jogo, parent, false)
 
         return ViewHolder(v)
     }
@@ -126,9 +128,18 @@ class JogosAdapter(
          * há o objeto time correto.
          * */
         override fun onClick(view: View?) {
-            val intent = Intent(context, DetalhesTimeActivity::class.java)
-            intent.putExtra(Time.KEY, view!!.tag as Time)
-            context.startActivity(intent)
+            val bundle = Bundle()
+            bundle.putParcelable( Time.KEY, view!!.tag as Time );
+
+            val fragment = DetalhesTimeFragment()
+            fragment.arguments = bundle
+
+            (context as MainActivity)
+                .supportFragmentManager
+                    .beginTransaction()
+                    .add(R.id.rl_container, fragment, FragmentAbstrato.KEY)
+                    .addToBackStack(null)
+                    .commit()
         }
     }
 }

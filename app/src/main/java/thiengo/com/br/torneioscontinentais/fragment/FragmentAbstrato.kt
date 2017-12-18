@@ -16,7 +16,7 @@ import thiengo.com.br.torneioscontinentais.R
  * Classe responsável por evitar códigos repetidos em
  * todas as subclasses caso ela não fosse criada.
  * */
-abstract class FragmentAbstract : Fragment() {
+abstract class FragmentAbstrato : Fragment() {
     var rvState: Parcelable? = null
 
     companion object {

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Torneios Continentais</string>
 
@@ -33,4 +34,7 @@
         reproduzidas abaixo em sua forma exata original, acompanhada das versões para o inglês da tradução
         feita por H. Rackham em 1914.
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

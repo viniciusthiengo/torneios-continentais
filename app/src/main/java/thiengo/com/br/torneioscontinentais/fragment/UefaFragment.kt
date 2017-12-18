@@ -5,7 +5,7 @@ import thiengo.com.br.torneioscontinentais.adaptador.JogosAdapter
 import thiengo.com.br.torneioscontinentais.dados.BancoDados
 
 
-class UefaFragment : FragmentAbstract() {
+class UefaFragment : FragmentAbstrato() {
 
     companion object {
         @JvmField val TITULO = "UEFA Champions League"
