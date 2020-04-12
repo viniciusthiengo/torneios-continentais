@@ -6,7 +6,7 @@ Artigo que discute em detalhes o componente visual, e nativo, `BottomNavigationV
 
 <img src="https://www.thiengo.com.br/img/post/normal/rbjpgg98d7b9j4cplj0b5t0uh455d7247517bc0871d5144846ad87c63b.gif" width="240" alt="Projeto Android com BottomNavigationView">
 
-O conteúdo do artigo também está disponível em [vídeos](https://www.thiengo.com.br/bottomnavigationview-android-como-e-quando-utilizar#title-36) e em [slides](https://www.thiengo.com.br/bottomnavigationview-android-como-e-quando-utilizar#title-35).
+O conteúdo do artigo também está disponível em [vídeo](https://www.thiengo.com.br/bottomnavigationview-android-como-e-quando-utilizar#title-36) e em [slides](https://www.thiengo.com.br/bottomnavigationview-android-como-e-quando-utilizar#title-35).
 
 ### Primeira parte
 
